@@ -77,8 +77,8 @@ xtrue = np.linspace(0, 4 * np.pi, 1000)       #0〜10まで1000個
 ytrue = sin_model(xtrue,0) # xfitを波発生関数に食わせて、その結果を取得
 # 結果確認
 plt.figure(figsize = (16,8))
-#plt.plot(x, y, '.k', label='data')
-#plt.plot(xtrue,ytrue, '-y', label='answer')
+plt.plot(x, y, '.k', label='data')
+plt.plot(xtrue,ytrue, '-y', label='answer')
 plt.plot(nx, ny, '-b', label='nn')
 plt.plot(rx, ry, '-g', label='rf')
 plt.plot(nrx,nry, '-r', label='nrf')
