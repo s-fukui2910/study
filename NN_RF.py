@@ -77,10 +77,15 @@ xtrue = np.linspace(0, 4 * np.pi, 1000)       #0〜10まで1000個
 ytrue = sin_model(xtrue,0) # xfitを波発生関数に食わせて、その結果を取得
 # 結果確認
 plt.figure(figsize = (16,8))
+#元データ(ノイズ有り,黒)
 #plt.plot(x, y, '.k', label='data')
+#理想とする関数(ノイズ無しのsin波,黄)
 #plt.plot(xtrue,ytrue, '-y', label='answer')
+#NNによる近似値(青)
 plt.plot(nx, ny, '-b', label='nn')
+#RFによる近似値(緑)
 plt.plot(rx, ry, '-g', label='rf')
+#NNの出力を利用したRFによる近似値(赤)
 plt.plot(nrx,nry, '-r', label='nrf')
 plt.legend()
 plt.gcf().canvas.mpl_connect('key_press_event', quit_figure)
